@@ -18,6 +18,7 @@ while (vInt == False):
         try: 
             int(quantDig)
             quantDig = int(quantDig)
+            operacao = input("Qual operação deseja realizar?: ")
             vInt = True
 
         except ValueError:
@@ -30,9 +31,24 @@ while (vInt == False):
 
 #salva valores digitados no array
 while l < quantDig:
-    valorn = int(input("Insira o " + str(l + 1) + "° valor: "))
-    valores.append(valorn)
-    l+=1
+    valorN = input("Insira o " + str(l + 1) + "° valor: ")
+
+    try: 
+        int(valorN)
+        valorN = int(valorN)
+        valores.append(valorN)
+        l+=1
+
+    except ValueError:
+        try:
+            float(valorN)
+            valorN = float(valorN)
+            valores.append(valorN)
+            l+=1
+
+        except ValueError:
+            print("Valor inválido. Insira um novo valor.")
 
 #printa valores em tela
+#print("O comprimento do array é " + str(len(valores)))
 print(valores)
