@@ -41,3 +41,5 @@ while l < quantDig:
 
 #printa valores em tela
 print(valores)
+
+#teste de commit
