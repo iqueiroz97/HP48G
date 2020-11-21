@@ -15,7 +15,7 @@ while (vInt == False):
         print("Valor inválido. Insira um novo valor.")
 
     else:
-        try:
+        try: 
             int(quantDig)
             quantDig = int(quantDig)
             vInt = True
@@ -23,15 +23,10 @@ while (vInt == False):
         except ValueError:
             try:
                 float(quantDig)
-                quantDig = int(quantDig)
-                vInt = True
+                print("Valor inválido. Insira um novo valor.")
 
             except ValueError:
-                print("Valor não é número. Insira um valor válido.")
-        
-        finally:
-            operacao = input("Qual a operação a ser realizada?: ")
-
+                print("Valor inválido. Insira um novo valor.")
 
 #salva valores digitados no array
 while l < quantDig:
@@ -41,5 +36,3 @@ while l < quantDig:
 
 #printa valores em tela
 print(valores)
-
-#teste de commit
