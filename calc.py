@@ -74,6 +74,21 @@ while lV < quantDig:
         except ValueError:
             print("Valor inválido. Insira um novo valor.")
 
+#lógica do cálculo - Não finalizada
+valoresLen = len(valores)
+
+while valoresLen > 0:
+
+    if operacao == 1:
+        valor1 = valores.pop(valoresLen - 1)
+        valor2 = valores.pop(valoresLen - 2)
+
+        calc = valor1 + valor2
+
+        valores.append(int(calc))
+
+print(valores)
+
 #printa valores em tela
-print("O comprimento do array é " + str(len(valores)))
-print("Valores: " + str(valores))
+#print("O comprimento do array é " + str(len(valores)))
+#print("Valores: " + str(valores))
