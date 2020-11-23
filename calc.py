@@ -35,11 +35,11 @@ while lO < 4:
     print(operacoes.pop(0))
     lO+=1
     
-#filtro de entrada (operador) - não finalizado
+#filtro de entrada (operação)
 while operadorVal == False:
     operacao = input("Insira o valor da operação que deseja realizar: ")
 
-    if operacao != "1" or operacao != "2" or operacao != "3" or operacao != "4":
+    if operacao < "0" or operacao > "4":
         print("Valor inválido. Insira um novo valor.")
 
     else:
@@ -62,15 +62,13 @@ while lV < quantDig:
 
     try: 
         int(valorN)
-        valorN = int(valorN)
-        valores.append(valorN)
+        valores.append(int(valorN))
         lV+=1
 
     except ValueError:
         try:
             float(valorN)
-            valorN = float(valorN)
-            valores.append(valorN)
+            valores.append(float(valorN))
             lV+=1
 
         except ValueError:
