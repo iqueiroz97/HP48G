@@ -76,14 +76,16 @@ while lV < quantDig:
 
 #lógica do cálculo - Não finalizada
 valoresLen = len(valores)
-valor1 = valores.pop()
-valor2 = valores.pop()
+valor1 = valores.pop(-1)
 
 if operacao == 1:
 
     while valoresLen >= 1:
-        calc = valor1 + valor2
-        valores.append(int(calc))
+        calc = valor1 * 2
+        valores.append(calc)
+
+else:
+    print("Erro no cálculo")
 
 print(valores)
 
