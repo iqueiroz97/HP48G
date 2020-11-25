@@ -8,6 +8,7 @@ valorFinal = 0
 lV = 0
 lO = 0
 operadorVal = False
+valoresF = []
 
 #filtro de entrada (valor)
 while vInt == False:
@@ -76,18 +77,21 @@ while lV < quantDig:
 
 #lógica do cálculo - Não finalizada
 valoresLen = len(valores)
-valor1 = valores.pop(-1)
 
 if operacao == 1:
 
     while valoresLen >= 1:
-        calc = valor1 * 2
-        valores.append(calc)
+        valor1 = valores.pop()
+        valor2 = valores.pop()
+        calc = valor1 + valor2
+        valoresF.append(calc)
+        print(valoresF)
+
 
 else:
     print("Erro no cálculo")
 
-print(valores)
+#print(valores)
 
 #printa valores em tela
 #print("O comprimento do array é " + str(len(valores)))
