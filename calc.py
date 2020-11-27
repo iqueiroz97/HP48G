@@ -9,6 +9,8 @@ lV = 0
 lO = 0
 operadorVal = False
 valoresF = []
+valor1 = 0
+valor2 = 0
 
 #filtro de entrada (valor)
 while vInt == False:
@@ -80,13 +82,18 @@ valoresLen = len(valores)
 
 if operacao == 1:
 
-    while valoresLen >= 1:
+    while valoresLen >= 0:
         valor1 = valores.pop()
-        valor2 = valores.pop()
+
+        if valoresLen > 0:
+            valor2 = valores.pop()
+        
         calc = valor1 + valor2
         valoresF.append(calc)
         print(valoresF)
 
+elif operacao == 2:
+    print("Ainda não definido.")
 
 else:
     print("Erro no cálculo")
