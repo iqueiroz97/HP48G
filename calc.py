@@ -42,7 +42,7 @@ while lO < 4:
 while operadorVal == False:
     operacao = input("Insira o valor da operação que deseja realizar: ")
 
-    if operacao < "0" or operacao > "4":
+    if operacao < "1" or operacao > "4":
         print("Valor inválido. Insira um novo valor.")
 
     else:
@@ -82,14 +82,15 @@ valoresLen = len(valores)
 
 if operacao == 1:
 
-    while valoresLen >= 0:
+    while valoresLen >= 1:
         valor1 = valores.pop()
 
-        if valoresLen > 0:
+        if valoresLen > 1:
             valor2 = valores.pop()
         
         calc = valor1 + valor2
         valoresF.append(calc)
+
         print(valoresF)
 
 elif operacao == 2:
@@ -98,8 +99,5 @@ elif operacao == 2:
 else:
     print("Erro no cálculo")
 
-#print(valores)
-
 #printa valores em tela
-#print("O comprimento do array é " + str(len(valores)))
-#print("Valores: " + str(valores))
+#print(valoresF)
