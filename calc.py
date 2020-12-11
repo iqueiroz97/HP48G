@@ -2,15 +2,14 @@
 valores = []
 vInt = False
 quantDig = 0
-operacoes = ["1 - Soma", "2 - Subtração", "3 - Multiplicação", "4 - Divisão"]
+operacoes = ["1 para Soma", "2 para Subtração", "3 para Multiplicação", "4 para Divisão"]
 operacao = 0
 valorFinal = 0
 lV = 0
 lO = 0
 operadorVal = False
-valoresF = []
-valor1 = 0
-valor2 = 0
+
+print("CÁLCULADORA HP48G")
 
 #filtro de entrada (valor)
 while vInt == False:
@@ -33,7 +32,25 @@ while vInt == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
-#mostra as operações
+#salva valores digitados pelo usuário no array
+while lV < quantDig:
+    valorN = input("Insira o " + str(lV + 1) + "° valor: ")
+
+    try: 
+        int(valorN)
+        valores.append(int(valorN))
+        lV+=1
+
+    except ValueError:
+        try:
+            float(valorN)
+            valores.append(float(valorN))
+            lV+=1
+
+        except ValueError:
+            print("Valor inválido. Insira um novo valor.")
+
+#mostra as operações disponíveis
 while lO < 4:
     print(operacoes.pop(0))
     lO+=1
@@ -59,45 +76,44 @@ while operadorVal == False:
             except ValueError:
                 print("Valor inválido. Insira um novo valor.")
 
-#salva valores digitados no array
-while lV < quantDig:
-    valorN = input("Insira o " + str(lV + 1) + "° valor: ")
+#lógica do cálculo
+def soma():
+    while len(valores) > 1:
+        calc = valores.pop() + valores.pop()
+        valores.append(calc)
 
-    try: 
-        int(valorN)
-        valores.append(int(valorN))
-        lV+=1
+##Não opera igual a cálculadora
+def subtracao():
+    while len(valores) > 1:
+        calc = valores.pop() - valores.pop()
+        valores.append(calc)
 
-    except ValueError:
-        try:
-            float(valorN)
-            valores.append(float(valorN))
-            lV+=1
+def multiplicacao():
+    while len(valores) > 1:
+        calc = valores.pop() * valores.pop()
+        valores.append(calc)
 
-        except ValueError:
-            print("Valor inválido. Insira um novo valor.")
-
-#lógica do cálculo - Não finalizada
-valoresLen = len(valores)
+#Não finalizado
+def divisao():
+    while len(valores) > 1:
+        calc = valores.pop() / valores.pop()
+        valores.append(calc)
 
 if operacao == 1:
+    soma()
+    print("Resultado: " + str(valores[0]))
 
-    while valoresLen >= 1:
-        valor1 = valores.pop()
-
-        if valoresLen > 1:
-            valor2 = valores.pop()
-        
-        calc = valor1 + valor2
-        valoresF.append(calc)
-
-        print(valoresF)
-
+#Não opera igual a cálculadora
 elif operacao == 2:
-    print("Ainda não definido.")
+    subtracao()
+    #print("Não definido")
+    print("Resultado: " + str(valores[0]))
 
-else:
-    print("Erro no cálculo")
+elif operacao == 3:
+    multiplicacao()
+    print("Resultado: " + str(valores[0]))
 
-#printa valores em tela
-#print(valoresF)
+elif operacao == 4:
+    #divisao()
+    print("Não definido")
+    #print("Resultado: " + str(valores[0]))
